@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<div class="row top">
+</div>
+<div class="row">
+<div class="col-4"></div>
+<div class="col-4">
+
+    <h3> Create new Task </h3>
+
+<form method="post">{% csrf_token %}
+  <div class="mb-3">
+    <label for="title" class="form-label">title</label>
+    <input type="text" class="form-control" id="title" name="title">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="finish" name="finish">
+    <label class="form-check-label" for="finish">finish</label>
+  </div>
+  <div class="mb-3">
+    <label class="form-check-label" for="description">description</label>
+    <textarea class="form-control" id="description" name="description" rows="4" cols="50"></textarea>
+  </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+<div class="col-4"></div>
+</div>
+
+{% endblock %}
